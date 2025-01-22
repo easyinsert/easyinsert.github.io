@@ -1,1 +1,1 @@
-[Project Page](https://rdt-robotics.github.io/rdt-robotics/) for paper *RDT-1B: a Diffusion Foundation Model for Bimanual Manipulation*
+[Project Page](https://skil-robotics.github.io/skil-robotics/) for paper *SKIL: Semantic Keypoint Imitation Learning for Generalizable Data-efficient Manipulation*
