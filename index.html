@@ -436,11 +436,22 @@
           <p>
             For an intuitive glance of SKIL's keypoint-based representation, the following figure illustrates the moving trajectories of the matched semantic keypoints on several tasks. By comparing with the keypoints in the reference images, we observe that most of the matched semantic keypoints in the input images maintain high temporal consistency. Even when some keypoints are occluded, the mismatched points remain close to the correct position.
           </p>
-          <img src="./static/images/keypoint-movement.png" style="margin: 2%;">
-          Movement of semantic keypoints in SKIL. Green points represent the keypoints in the current frame, and the white trajectories show their movements in previous timesteps. Most keypoints maintain temporal consistency. Although some keypoints are occluded, the mismatched points remain close to the relevant object.
-          <img src="./static/images/keypoint-movement-objects.png" style="margin: 2%;">
-          Movement of semantic keypoints on different objects in SKIL. Green points represent the current keypoints, and the white flows show their previous trajectories. Temporal consistency is maintained across objects within the same category.
-
+          <div style="display: flex; flex-direction: column; gap: 20px;">
+            <div style="display: flex; align-items: center;">
+              <img src="./static/images/keypoint-movement.png" style="margin: 2%; max-width: 50%;">
+              <p style="flex: 1; margin-left: 20px;">
+                Movement of semantic keypoints in SKIL. Green points represent the keypoints in the current frame, and the white trajectories show their movements in previous timesteps. Most keypoints maintain temporal consistency. Although some keypoints are occluded, the mismatched points remain close to the relevant object.
+              </p>
+            </div>
+            
+            <div style="display: flex; align-items: center;">
+              <img src="./static/images/keypoint-movement-objects.png" style="margin: 2%; max-width: 50%;">
+              <p style="flex: 1; margin-left: 20px;">
+                Movement of semantic keypoints on different objects in SKIL. Green points represent the current keypoints, and the white flows show their previous trajectories. Temporal consistency is maintained across objects within the same category.
+              </p>
+            </div>
+          </div>
+          
           <!-- ablation on vlm -->
           <h4 class="title is-4 mt-3 has-text-left">Ablation on Vision Foundation Models</h4>
           <div style="display: flex; justify-content: space-between;">
