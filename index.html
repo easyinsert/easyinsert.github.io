@@ -202,22 +202,21 @@
           </div>
           <h3 class="title is-5 has-text-centered">Cross-embodiment Learning</h3>
           <div class="container">
-            <div class="columns is-centered">
-              <div class="column is-6">
-                <p class="content has-text-justified mt-4">
-                  Our motivation is that semantic keypoints abstraction avoids incorporating embodiment information, therefore enables the use of diverse data source (including human videos). Inspired by ATM, a cross-embodiment learning framework, we view the trajectory prediction of keypoints as an intermediate task. The predicted trajectories serve as effective guidance for learning policies.
-                  We name this cross-embodiment version <b>SKIL-H</b>.
-                  Architecture of SKIL-H, comprising the <b>Trajectory Prediction Module</b> and the <b>Trajectory-to-Action Module</b>. 
-                  The first module predicts the trajectories of matched keypoints based on the fused embedding. 
-                  The second module takes the predicted trajectories and the robot state as inputs, and outputs the robot action sequence.
-                </p>
+              <div class="columns is-centered">
+                  <div class="column is-6">
+                      <p class="content has-text-justified mt-4">
+                          Our motivation is that semantic keypoints abstraction avoids incorporating embodiment information, therefore enables the use of diverse data sources (including human videos). Inspired by ATM, a cross-embodiment learning framework, we view the trajectory prediction of keypoints as an intermediate task. The predicted trajectories serve as effective guidance for learning policies. We name this cross-embodiment version <b>SKIL-H</b>.
+                      </p>
+                  </div>
+                  <div class="column is-6">
+                      <div class="has-text-centered">
+                          <img src="./static/images/skil-h.png" alt="SKIL-H framework" class="image is-fullwidth">
+                          <p class="caption">
+                              Architecture of <b>SKIL-H</b>, comprising the <b>Trajectory Prediction Module</b> and the <b>Trajectory-to-Action Module</b>. The first module predicts the trajectories of matched keypoints based on the fused embedding. The second module takes the predicted trajectories and the robot state as inputs, and outputs the robot action sequence.
+                          </p>
+                      </div>
+                  </div>
               </div>
-              <div class="column is-6">
-                <div class="has-text-centered">
-                  <img src="./static/images/skil-h.png" alt="SKIL-H framework" class="image is-fullwidth">
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
