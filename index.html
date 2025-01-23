@@ -165,7 +165,7 @@
           <p style="text-align: justify;">
             Real-world tasks such as garment manipulation and table rearrangement demand robots to perform generalizable, highly precise, and long-horizon actions. Although imitation learning has proven to be an effective approach for teaching robots new skills, large amounts of expert demonstration data are still indispensible for these complex tasks, resulting in high sample complexity and costly data collection. 
             To address this, we propose <b>Semantic Keypoint Imitation Learning (SKIL)</b>, a framework which automatically obtain semantic keypoints with help of vision foundation models, and forms the descriptor of <b>semantic keypoints</b> that enables effecient imitation learning of complex robotic tasks with significantly lower sample complexity. 
-            In real world experiments, SKIL doubles the performance of baseline methods in tasks such as picking a cup or mouse, while demonstrating exceptional robustness to variations in objects, environmental changes, and distractors. For long-horizon tasks like hanging a towel on a rack where previous methods fail completely, SKIL achieves a mean success rate of 70\% with as few as 30 demonstrations. 
+            In real world experiments, SKIL doubles the performance of baseline methods in tasks such as picking a cup or mouse, while demonstrating exceptional robustness to variations in objects, environmental changes, and distractors. For long-horizon tasks like hanging a towel on a rack where previous methods fail completely, SKIL achieves a mean success rate of 70% with as few as 30 demonstrations. 
             Furthermore, SKIL naturally supports cross-embodiment learning due to its semantic keypoints abstraction, our experiments demonstrate that even human videos bring considerable improvement to the learning performance. All these results demonstrate the great success of SKIL in achieving data-efficint generalizable robotic learning.
           </p>
         </div>
@@ -178,7 +178,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column is-full">
-          <h2 class="title is-3 has-text-centered">SKIL Framework</h2>
+          <h2 class="title is-3 has-text-centered">Framework</h2>
           <div class="has-text-centered">
             <img src="./static/images/method.png" alt="SKIL Framework" class="image is-fullwidth">
           </div>
@@ -189,12 +189,29 @@
             <div class="columns is-centered">
               <div class="column is-6">
                 <p class="content has-text-justified mt-4">
-                  Overview of our framework SKIL, including <b>Semantic Keypoints Description Module</b> and <b>Policy Module</b>. The first module computes descriptors for the semantic keypoints. Then, we apply a transformer encoder to obtain the fused embedding of the keypoints. Conditioned on the fused embedding and robot state, a diffusion action head outputs the final action sequence.
+                  Process of generating reference features, given a single reference image of the specific task: (1) Apply SAM <cite><a href="https://arxiv.org/abs/2304.03856">Kirillov et al., 2023</a></cite> and Vision Foundation Model to obtain the mask <span style="font-family: 'Courier New', monospace;">&#x03A9;</span> and the feature map <span style="font-family: 'Courier New', monospace;">&#x1D453;<sub>r</sub></span> individually; (2) Cluster the masked features <span style="font-family: 'Courier New', monospace;">&#x1D453;<sub>r</sub>[\mathcal{M}]</span> to obtain the reference features <span style="font-family: 'Courier New', monospace;">&#x03A6;<sub>r</sub></span> using K-means.
                 </p>
               </div>
               <div class="column is-6">
                 <div class="has-text-centered">
-                  <img src="./static/images/method.png" alt="SKIL Framework" class="image is-fullwidth">
+                  <img src="./static/images/reference_kp.png" alt="One-time Reference Features Generation" class="image is-fullwidth">
+                </div>
+              </div>
+            </div>
+          </div>
+          <h3 class="title is-4 has-text-centered">Cross-embodiment Learning</h3>
+          <div class="container">
+            <div class="columns is-centered">
+              <div class="column is-6">
+                <p class="content has-text-justified mt-4">
+                  Our motivation is that semantic keypoints abstraction avoids incorporating embodiment information, therefore enables the use of diverse data source (including human videos). Inspired by ATM \cite{wen2023any}, a cross-embodiment learning framework, we view the trajectory prediction of keypoints as an intermediate task. The predicted trajectories serve as effective guidance for learning policies.
+                  We name this cross-embodiment version <b>SKIL-H</b>.
+                  Architecture of SKIL-H, comprising the <b>Trajectory Prediction Module</b> and the <b>Trajectory-to-Action Module</b>. The first module predicts the trajectories <span style="font-family: 'Courier New', monospace;">&#x03C4;<sub>t:t+H<sub>p</sub></sub></span> of matched keypoints based on the fused embedding <span style="font-family: 'Courier New', monospace;">&#x03A9;<sub>t</sub></span>. The second module takes the predicted trajectories <span style="font-family: 'Courier New', monospace;">&#x03C4;<sub>t:t+H<sub>p</sub></sub></span> and the robot state <span style="font-family: 'Courier New', monospace;">&#x03A3;<sub>t</sub></span> as inputs, and outputs the robot action sequence <span style="font-family: 'Courier New', monospace;">&#x03B1;<sub>t:t+H<sub>a</sub></sub></span>.
+                </p>
+              </div>
+              <div class="column is-6">
+                <div class="has-text-centered">
+                  <img src="./static/images/skil-h.png" alt="SKIL-H framework" class="image is-fullwidth">
                 </div>
               </div>
             </div>
