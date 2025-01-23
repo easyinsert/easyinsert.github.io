@@ -143,7 +143,7 @@
     <div class="container is-max-desktop">
       <div class="hero-body" style="display: flex; justify-content: center; align-items: center;">
         <video style="width:100%; height:auto; margin: 0%;" controls muted loading="lazy" autoplay loop playsinline>
-          <source src="./static/videos/head.mp4" type="video/mp4">
+          <source src="./static/videos/SKIL-website.mp4" type="video/mp4">
         </video>
       </div>
     </div>
@@ -159,17 +159,14 @@
           <h2 class="title is-3 has-text-centered">Overview</h2>
           <div style="display: flex; justify-content: center;">
             <div style="display: flex; justify-content: center;">
-              <img src="./static/images/head.png" alt="Abstract image" style="max-width: 100%; height: auto; margin: 10px;">
+              <img src="./static/images/teaser.png" alt="Abstract image" style="max-width: 100%; height: auto; margin: 10px;">
             </div>
           </div>
           <p style="text-align: justify;">
-            We present <b>Robotics Diffusion Transformer</b> with <b>1.2B</b> parameters (RDT-1B), the
-            <b>largest</b> diffusion-based foundation model for robotic manipulation. It is pre-trained on the <b>largest</b>
-            multi-robot collection of 46 datasets with 1M+ episodes. To boost its bimanual capability, we have 
-            collected 6K+ episodes (one of the <b>largest</b> to date) on the ALOHA dual-arm robot for fine-tuning.
-            It has set a new benchmark in terms of dexterity, zero-shot generalizability, and few-shot learning.
-            It supports control of almost all modern manipulators (e.g., dual-arm, joints, EEFs, and even wheeled locomotion) and is ready for the
-            community to fine-tune with their robots🚀!
+            Real-world tasks such as garment manipulation and table rearrangement demand robots to perform generalizable, highly precise, and long-horizon actions. Although imitation learning has proven to be an effective approach for teaching robots new skills, large amounts of expert demonstration data are still indispensible for these complex tasks, resulting in high sample complexity and costly data collection. 
+            To address this, we propose <b>Semantic Keypoint Imitation Learning (SKIL)</b>, a framework which automatically obtain semantic keypoints with help of vision foundation models, and forms the descriptor of <b>semantic keypoints</b> that enables effecient imitation learning of complex robotic tasks with significantly lower sample complexity. 
+            In real world experiments, SKIL doubles the performance of baseline methods in tasks such as picking a cup or mouse, while demonstrating exceptional robustness to variations in objects, environmental changes, and distractors. For long-horizon tasks like hanging a towel on a rack where previous methods fail completely, SKIL achieves a mean success rate of 70\% with as few as 30 demonstrations. 
+            Furthermore, SKIL naturally supports cross-embodiment learning due to its semantic keypoints abstraction, our experiments demonstrate that even human videos bring considerable improvement to the learning performance. All these results demonstrate the great success of SKIL in achieving data-efficint generalizable robotic learning.
           </p>
         </div>
       </div>
@@ -181,17 +178,27 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column is-full">
-          <h2 class="title is-3 has-text-centered">RDT Framework</h2>
+          <h2 class="title is-3 has-text-centered">SKIL Framework</h2>
           <div class="has-text-centered">
-            <img src="./static/images/framework.png" alt="RDT Framework" class="image is-fullwidth">
+            <img src="./static/images/method.png" alt="SKIL Framework" class="image is-fullwidth">
           </div>
           <p class="content has-text-justified mt-4">
-            Heterogeneous action spaces of various robots are embedded into a
-            unified action space for cross-robot model training. <strong>Inputs:</strong> low-dimensional proprioception
-            <b>z</b><sub>t</sub>, noisy action chunk <b>ã</b><sub>t:t+T<sub>a</sub></sub>, control frequency c, and diffusion timestep
-            k, acting as denoising inputs; image and language inputs, acting as conditions.
-            <strong>Outputs:</strong> denoised action chunk <b>a</b><sub>t:t+T<sub>a</sub></sub>.
+            Overview of our framework SKIL, including <b>Semantic Keypoints Description Module</b> and <b>Policy Module</b>. The first module computes descriptors for the semantic keypoints. Then, we apply a transformer encoder to obtain the fused embedding of the keypoints. Conditioned on the fused embedding and robot state, a diffusion action head outputs the final action sequence.
           </p>
+          <div class="container">
+            <div class="columns is-centered">
+              <div class="column is-6">
+                <p class="content has-text-justified mt-4">
+                  Overview of our framework SKIL, including <b>Semantic Keypoints Description Module</b> and <b>Policy Module</b>. The first module computes descriptors for the semantic keypoints. Then, we apply a transformer encoder to obtain the fused embedding of the keypoints. Conditioned on the fused embedding and robot state, a diffusion action head outputs the final action sequence.
+                </p>
+              </div>
+              <div class="column is-6">
+                <div class="has-text-centered">
+                  <img src="./static/images/method.png" alt="SKIL Framework" class="image is-fullwidth">
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
