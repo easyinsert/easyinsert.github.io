@@ -455,14 +455,11 @@
           <!-- ablation on vlm -->
           <h4 class="title is-5 mt-3 has-text-centered">Ablation on Vision Foundation Models</h4>
           <div style="display: flex; justify-content: space-between;">
-            <div style="flex: 1;">
-              <p>
-                We conduct ablation studies on various vision foundation models, including DiFT, DINOv2 and RADIO. More details can be found in the paper.
-              </p>
-              A comparison of success rates and inference latency for different vision foundation models (DINOv2, DiFT, and RADIO v2.5) on an NVIDIA A10 GPU. The results highlight the trade-off between computational overhead (latency) and performance (success rate) across varying model scales.
-            </div>
-            <div style="flex: 1; text-align: right;">
-              <img src="./static/images/vlm_compare.png" style="width: 100%; margin: 2%;">
+            <div style="display: flex; align-items: center;">
+                <img src="./static/images/vlm_compare.png" style="margin: 2%; max-width: 50%;">
+                <p style="flex: 1; margin-left: 20px;">
+                    We conduct ablation studies on various vision foundation models, including DiFT, DINOv2, and RADIO. More details can be found in the paper. A comparison of success rates and inference latency for different vision foundation models (DINOv2, DiFT, and RADIO v2.5) on an NVIDIA A10 GPU. The results highlight the trade-off between computational overhead (latency) and performance (success rate) across varying model scales.
+                </p>
             </div>
           </div>
         </div>
