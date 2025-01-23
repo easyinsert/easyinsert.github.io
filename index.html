@@ -179,6 +179,7 @@
       <div class="columns is-centered">
         <div class="column is-full">
           <h2 class="title is-3 has-text-centered">Framework</h2>
+          <h3 class="title is-5 has-text-centered">SKIL Framework</h3>
           <div class="has-text-centered">
             <img src="./static/images/method.png" alt="SKIL Framework" class="image is-fullwidth">
           </div>
@@ -189,7 +190,7 @@
             <div class="columns is-centered">
               <div class="column is-6">
                 <p class="content has-text-justified mt-4">
-                  Process of generating reference features, given a single reference image of the specific task: (1) Apply SAM <cite><a href="https://arxiv.org/abs/2304.03856">Kirillov et al., 2023</a></cite> and Vision Foundation Model to obtain the mask <span style="font-family: 'Courier New', monospace;">&#x03A9;</span> and the feature map <span style="font-family: 'Courier New', monospace;">&#x1D453;<sub>r</sub></span> individually; (2) Cluster the masked features <span style="font-family: 'Courier New', monospace;">&#x1D453;<sub>r</sub>[\mathcal{M}]</span> to obtain the reference features <span style="font-family: 'Courier New', monospace;">&#x03A6;<sub>r</sub></span> using K-means.
+                  Process of generating reference features, given a single reference image of the specific task: (1) Apply SAM and Vision Foundation Model to obtain the mask and the feature map individually; (2) Cluster the masked features to obtain the reference features using K-means.
                 </p>
               </div>
               <div class="column is-6">
@@ -199,14 +200,16 @@
               </div>
             </div>
           </div>
-          <h3 class="title is-4 has-text-centered">Cross-embodiment Learning</h3>
+          <h3 class="title is-5 has-text-centered">Cross-embodiment Learning</h3>
           <div class="container">
             <div class="columns is-centered">
               <div class="column is-6">
                 <p class="content has-text-justified mt-4">
-                  Our motivation is that semantic keypoints abstraction avoids incorporating embodiment information, therefore enables the use of diverse data source (including human videos). Inspired by ATM \cite{wen2023any}, a cross-embodiment learning framework, we view the trajectory prediction of keypoints as an intermediate task. The predicted trajectories serve as effective guidance for learning policies.
+                  Our motivation is that semantic keypoints abstraction avoids incorporating embodiment information, therefore enables the use of diverse data source (including human videos). Inspired by ATM, a cross-embodiment learning framework, we view the trajectory prediction of keypoints as an intermediate task. The predicted trajectories serve as effective guidance for learning policies.
                   We name this cross-embodiment version <b>SKIL-H</b>.
-                  Architecture of SKIL-H, comprising the <b>Trajectory Prediction Module</b> and the <b>Trajectory-to-Action Module</b>. The first module predicts the trajectories <span style="font-family: 'Courier New', monospace;">&#x03C4;<sub>t:t+H<sub>p</sub></sub></span> of matched keypoints based on the fused embedding <span style="font-family: 'Courier New', monospace;">&#x03A9;<sub>t</sub></span>. The second module takes the predicted trajectories <span style="font-family: 'Courier New', monospace;">&#x03C4;<sub>t:t+H<sub>p</sub></sub></span> and the robot state <span style="font-family: 'Courier New', monospace;">&#x03A3;<sub>t</sub></span> as inputs, and outputs the robot action sequence <span style="font-family: 'Courier New', monospace;">&#x03B1;<sub>t:t+H<sub>a</sub></sub></span>.
+                  Architecture of SKIL-H, comprising the <b>Trajectory Prediction Module</b> and the <b>Trajectory-to-Action Module</b>. 
+                  The first module predicts the trajectories of matched keypoints based on the fused embedding. 
+                  The second module takes the predicted trajectories and the robot state as inputs, and outputs the robot action sequence.
                 </p>
               </div>
               <div class="column is-6">
@@ -225,513 +228,232 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column is-full">
-          <h2 class="title is-3 has-text-centered">RDT Inference Video Samples</h2>
-          <h3 class="title is-4 has-text-centered">Dexterity</h3>
-          <p class="content has-text-justified mb-4">
-            The following videos show that RDT can perform dexterous manipulation tasks. In the sample task, it must push the joystick
-            straight enough to move the robot dog <strong>straight</strong> forward. Even the slightest push angle may cause the robot dog to deviate.
+          <h2 class="title is-3 has-text-centered">Evaluation Videos</h2>
+          <p>We use a Franka robot arm equipped with a Robotiq gripper to perform six real-world tasks, including the first four short-horizon tasks and the last two long-horizon ones.
+          Our experiments demonstrate the strong generalization ability and the excelling data efficiency of SKIL under <b>diverse unseen objects and scenes</b>.
           </p>
-          <div class="columns is-centered">
-            <video style="width:45%; height:auto; margin: 2%;" controls muted loading="lazy" autoplay loop playsinline>
-              <source src="./static/videos/1.mp4" type="video/mp4">
-            </video>
-            <video style="width:45%; height:auto; margin: 2%;" controls muted loading="lazy" autoplay loop playsinline>
-              <source src="./static/videos/1_5.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-      </div>
-
-      <div class="columns is-centered">
-        <div class="column content">
-          <h3 class="title is-4" style="text-align: center;">Unseen Object</h3>
-          <p>The following videos show that RDT can <strong>zero-shot</strong> generalize to unseen objects.</p>
-          <div style="display: flex; justify-content: center; flex-wrap: wrap;">
-            <video style="width:45%; height:auto; margin: 2%;" controls muted loading="lazy" autoplay loop playsinline>
-              <source src="./static/videos/2.mp4" type="video/mp4">
-            </video>
-            <video style="width:45%; height:auto; margin: 2%;" controls muted loading="lazy" autoplay loop playsinline>
-              <source src="./static/videos/3.mp4" type="video/mp4">
-            </video>
-            <video style="width:45%; height:auto; margin: 2%;" controls muted loading="lazy" autoplay loop playsinline>
-              <source src="./static/videos/4.mp4" type="video/mp4">
-            </video>
-            <img src="./static/videos/cups.png" style="width:45%; height:auto; margin: 2%;"
-              alt="Water level pouring with left hand" style="max-width: 45%; margin: 5px;">
-          </div>
-        </div>
-      </div>
-
-      <div class="columns is-centered">
-        <div class="column content">
-          <h3 class="title is-4" style="text-align: center;">Instruction Following</h3>
-          <p>The following videos show that RDT can stick to provided instructions and <strong>zero-shot</strong>
-            generalize to unseen modalities.
-            RDT is required to pour water into the cup so that the water level is exactly the same as the <strong>specified level</strong>, 1/3 or 2/3.
-            Note that RDT has only seen the instructions for water levels of <i>little</i>, <i>half</i>, and <i>full</i> in the training data, while <i>1/3</i> and <i>2/3</i> are unseen.</p>
-          <div style="display: flex; justify-content: center; flex-wrap: wrap;">
-            <video id="video1" style="width:45%; height:auto; margin: 2%;" controls muted loading="lazy">
-              <source src="./static/videos/5.mp4" type="video/mp4">
-            </video>
-            <video id="video2" style="width:45%; height:auto; margin: 2%;" controls muted loading="lazy">
-              <source src="./static/videos/6.mp4" type="video/mp4">
-            </video>
-          </div>
-
-          <div style="display: flex; justify-content: center; flex-wrap: wrap;">
-            <img src="./static/videos/1.png" style="width:45%; height:auto; margin: 2%;"
-              alt="Water level pouring with left hand" style="max-width: 45%; margin: 5px;">
-            <img src="./static/videos/2.png" style="width:45%; height:auto; margin: 2%;"
-              alt="Water level pouring with right hand" style="max-width: 45%; margin: 5px;">
-          </div>
-          <p style="text-align: justify;">Resulting water levels in 8 trails. <strong>Left:</strong> pouring water with the left hand,
-            specifying the water level as one-third; <strong>Right:</strong> pouring water with the right hand, specifying the water
-            level as two-thirds.</p>
-        </div>
-      </div>
-
-      <div class="columns is-centered">
-        <div class="column content">
-          <h3 class="title is-4" style="text-align: center;">Unseen Scene</h3>
-          <p>The following videos show that RDT can <strong>zero-shot</strong> generalize to unseen scenes.</p>
-          <div style="display: flex; justify-content: center; flex-wrap: wrap;">
-            <video style="width:45%; height:auto; margin: 2%;" controls muted loading="lazy" autoplay loop playsinline>
-              <source src="./static/videos/7.mp4" type="video/mp4">
-            </video>
-            <video style="width:45%; height:auto; margin: 2%;" controls muted loading="lazy" autoplay loop playsinline>
-              <source src="./static/videos/8.mp4" type="video/mp4">
-            </video>
-            <video style="width:45%; height:auto; margin: 2%;" controls muted loading="lazy" autoplay loop playsinline>
-              <source src="./static/videos/9.mp4" type="video/mp4">
-            </video>
-            <video style="width:45%; height:auto; margin: 2%;" controls muted loading="lazy" autoplay loop playsinline>
-              <source src="./static/videos/10.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-      </div>
-
-      <div class="columns is-centered">
-        <div class="column content">
-          <h3 class="title is-4" style="text-align: center;">Few-Shot Learning</h3>
-          <p>The following videos show that RDT can learn new skills with <strong>1-5</strong> demonstrations.
-            A <i>skill</i> refers to verbs like "wipe" and "open".</p>
-          <div style="display: flex; justify-content: center; flex-wrap: wrap;">
-            <video style="width:45%; height:auto; margin: 2% 2% 0 2%;" controls muted loading="lazy" autoplay loop
-              playsinline>
-              <source src="./static/videos/11.mp4" type="video/mp4">
-            </video>
-            <video style="width:45%; height:auto; margin: 2% 2% 0 2%;" controls muted loading="lazy" autoplay loop
-              playsinline>
-              <source src="./static/videos/12.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-      </div>
-
-      <div class="columns is-centered">
-        <div class="column content">
-          <h3 class="title is-4" style="text-align: center;">Real-Time Inference</h3>
-          <p>In the experiment, we deliberately limited the movement speed of the robot arm to ensure safety and reduce wear. 
-            In fact, the inference frequency of RDT (6 action chunks/sec or 381 actions/sec) can fully support the robot arm to reach a <strong>speed comparable to human operators</strong>. 
-            The following are inference videos without the speed limit of the robot arm.
-          </p>
-          <div style="display: flex; justify-content: center; flex-wrap: wrap;">
-            <video style="width:45%; height:auto; margin: 2% 2% 0 2%;" controls muted loading="lazy" autoplay loop
-              playsinline>
-              <source src="./static/videos/13.mp4" type="video/mp4">
-            </video>
-            <video style="width:45%; height:auto; margin: 2% 2% 0 2%;" controls muted loading="lazy" autoplay loop
-              playsinline>
-              <source src="./static/videos/14.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-      </div>
-      <script>
-        document.addEventListener('DOMContentLoaded', function () {
-          const video1 = document.getElementById('video1');
-          const video2 = document.getElementById('video2');
-          let video1Ended = false;
-          let video2Ended = false;
-
-          function checkBothEnded() {
-            if (video1Ended && video2Ended) {
-              setTimeout(() => {
-                video1.play();
-                video2.play();
-                video1Ended = false;
-                video2Ended = false;
-              }, 1000);
-            }
-          }
-
-          video1.addEventListener('ended', function () {
-            video1Ended = true;
-            checkBothEnded();
-          });
-
-          video2.addEventListener('ended', function () {
-            video2Ended = true;
-            checkBothEnded();
-          });
-
-          video1.play();
-          video2.play();
-        });
-      </script>
-    </div>
-    </div>
-  </section>
-
-  <!-- <section class="section"> -->
-  <!-- <div class="container is-max-desktop"> -->
-  <!-- <div class="columns is-centered"> -->
-  <!-- <div class="column is-full"> -->
-  <!-- <h2 class="title is-3" style="text-align: center;">Comparative Results with Baselines</h2> -->
-  <!-- <div class="columns is-centered"> -->
-  <!-- <div class="column content"> -->
-  <!-- <p> -->
-  <!-- We compare the performance of RDT with OpenVLA and ACT. -->
-  <!-- </p> -->
-  <!-- </div> -->
-  <!-- </div> -->
-  <!-- <div class="columns is-centered"> -->
-  <!-- <img src="./static/images/figure.png" style="width:100%; height:auto; margin: 2%;" alt="Water level pouring with right hand" -->
-  <!-- style="max-width: 45%; margin: 5px;"> -->
-  <!-- </div> -->
-  <!-- <div class="columns"> -->
-  <!-- <div style="display: flex; align-items: center; margin-top: 20px;"> -->
-  <!-- <span style="font-size: 20px;">Expand Comparative Videos</span> -->
-  <!-- <button id="toggleButton" onclick="toggleContent()" -->
-  <!-- style="border: none; background: none; font-size: 20px; cursor: pointer; margin-left: 10px;">[+]</button> -->
-  <!-- </div> -->
-  <!-- </div> -->
-  <!-- <div id="expandableContent" style="display: none; margin-top: 20px;"> -->
-  <!-- <div class="columns is-centered"> -->
-  <!-- <div class="column content"> -->
-  <!-- <h3 class="title is-4" style="text-align: center;">Robot Dog</h3> -->
-  <!--  -->
-  <!-- <div class="columns is-centered"> -->
-  <!-- <div class="column" style="text-align: center;"> -->
-  <!-- <video style="width: 90%; height: auto;" controls muted loading="lazy" autoplay loop playsinline> -->
-  <!-- <source src="./static/videos/1-Dexterity-Robot Dog/RDT.mp4_compressed.mp4" type="video/mp4"> -->
-  <!-- </video> -->
-  <!-- <div style="text-align: center;"><strong>RDT (ours)</strong></div> -->
-  <!-- </div> -->
-  <!-- <div class="column" style="text-align: center;"> -->
-  <!-- <video style="width: 90%; height: auto;" controls muted loading="lazy" autoplay loop playsinline> -->
-  <!-- <source src="./static/videos/1-Dexterity-Robot Dog/RDT_scratch.mp4_compressed.mp4" type="video/mp4"> -->
-  <!-- </video> -->
-  <!-- <div style="text-align: center;">RDT Scratch</div> -->
-  <!-- </div> -->
-  <!-- </div> -->
-  <!--  -->
-  <!-- <div class="columns is-centered"> -->
-  <!-- <div class="column" style="text-align: center;"> -->
-  <!-- <video style="width: 90%; height: auto;" controls muted loading="lazy" autoplay loop playsinline> -->
-  <!-- <source src="./static/videos/1-Dexterity-Robot Dog/ACT.mp4_compressed.mp4" type="video/mp4"> -->
-  <!-- </video> -->
-  <!-- <div style="text-align: center;">ACT</div> -->
-  <!-- </div> -->
-  <!-- <div class="column" style="text-align: center;"> -->
-  <!-- <video style="width: 90%; height: auto;" controls muted loading="lazy" autoplay loop playsinline> -->
-  <!-- <source src="./static/videos/1-Dexterity-Robot Dog/OpenVLA.mp4_compressed.mp4" type="video/mp4"> -->
-  <!-- </video> -->
-  <!-- <div style="text-align: center;">OpenVLA</div> -->
-  <!-- </div> -->
-  <!-- </div> -->
-  <!-- </div> -->
-  <!-- </div> -->
-  <!--  -->
-  <!-- <div class="columns is-centered"> -->
-  <!-- <div class="column content"> -->
-  <!-- <h3 class="title is-4" style="text-align: center;">Handover</h3> -->
-  <!--  -->
-  <!-- <div class="columns is-centered"> -->
-  <!-- <div class="column" style="text-align: center;"> -->
-  <!-- <video style="width: 90%; height: auto;" controls muted loading="lazy" autoplay loop playsinline> -->
-  <!-- <source src="./static/videos/5-Few-Shot Learning-1-Handover/RDT.mp4_compressed.mp4" type="video/mp4"> -->
-  <!-- </video> -->
-  <!-- <div style="text-align: center;"><strong>RDT (ours)</strong></div> -->
-  <!-- </div> -->
-  <!-- <div class="column" style="text-align: center;"> -->
-  <!-- <video style="width: 90%; height: auto;" controls muted loading="lazy" autoplay loop playsinline> -->
-  <!-- <source src="./static/videos/5-Few-Shot Learning-1-Handover/RDT_from_scratch.mp4_compressed.mp4" type="video/mp4"> -->
-  <!-- </video> -->
-  <!-- <div style="text-align: center;">RDT Scratch</div> -->
-  <!-- </div> -->
-  <!-- </div> -->
-  <!--  -->
-  <!-- <div class="columns is-centered"> -->
-  <!-- <div class="column" style="text-align: center;"> -->
-  <!-- <video style="width: 90%; height: auto;" controls muted loading="lazy" autoplay loop playsinline> -->
-  <!-- <source src="./static/videos/5-Few-Shot Learning-1-Handover/ACT.mp4_compressed.mp4" type="video/mp4"> -->
-  <!-- </video> -->
-  <!-- <div style="text-align: center;">ACT</div> -->
-  <!-- </div> -->
-  <!-- <div class="column" style="text-align: center;"> -->
-  <!-- <video style="width: 90%; height: auto;" controls muted loading="lazy" autoplay loop playsinline> -->
-  <!-- <source src="./static/videos/5-Few-Shot Learning-1-Handover/OpenVLA.mp4_compressed.mp4" type="video/mp4"> -->
-  <!-- </video> -->
-  <!-- <div style="text-align: center;">OpenVLA</div> -->
-  <!-- </div> -->
-  <!-- </div> -->
-  <!-- </div> -->
-  <!-- </div> -->
-  <!--  -->
-  <!-- <div class="columns is-centered"> -->
-  <!-- <div class="column content"> -->
-  <!-- <h3 class="title is-4" style="text-align: center;">Fold Shorts</h3> -->
-  <!--  -->
-  <!-- <div class="columns is-centered"> -->
-  <!-- <div class="column" style="text-align: center;"> -->
-  <!-- <video style="width: 90%; height: auto; margin: 1%;" controls muted loading="lazy" autoplay loop playsinline> -->
-  <!-- <source src="./static/videos/5-Few-Shot Learning-2-Fold Shorts/RDT.mp4_compressed.mp4" type="video/mp4"> -->
-  <!-- </video> -->
-  <!-- <div style="text-align: center;"><strong>RDT (ours)</strong></div> -->
-  <!-- </div> -->
-  <!-- <div class="column" style="text-align: center;"> -->
-  <!-- <video style="width: 90%; height: auto; margin: 1%;" controls muted loading="lazy" autoplay loop playsinline> -->
-  <!-- <source src="./static/videos/5-Few-Shot Learning-2-Fold Shorts/RDT from scratch.mp4_compressed.mp4" type="video/mp4"> -->
-  <!-- </video> -->
-  <!-- <div style="text-align: center;">RDT Scratch</div> -->
-  <!-- </div> -->
-  <!-- </div> -->
-  <!--  -->
-  <!-- <div class="columns is-centered"> -->
-  <!-- <div class="column" style="text-align: center;"> -->
-  <!-- <video style="width: 90%; height: auto;" controls muted loading="lazy" autoplay loop playsinline> -->
-  <!-- <source src="./static/videos/5-Few-Shot Learning-2-Fold Shorts/ACT.mp4_compressed.mp4" type="video/mp4"> -->
-  <!-- </video> -->
-  <!-- <div style="text-align: center;">ACT</div> -->
-  <!-- </div> -->
-  <!-- <div class="column" style="text-align: center;"> -->
-  <!-- <video style="width: 90%; height: auto;" controls muted loading="lazy" autoplay loop playsinline> -->
-  <!-- <source src="./static/videos/5-Few-Shot Learning-2-Fold Shorts/OpenVLA.mp4_compressed.mp4" type="video/mp4"> -->
-  <!-- </video> -->
-  <!-- <div style="text-align: center;">OpenVLA</div> -->
-  <!-- </div> -->
-  <!-- </div> -->
-  <!-- </div> -->
-  <!-- </div> -->
-  <!-- </div> -->
-  <!-- </div> -->
-  <!-- </section> -->
-  <!--  -->
-  <!-- <style> -->
-  <!-- #toggleButton:hover { -->
-  <!-- text-decoration: underline; -->
-  <!-- } -->
-  <!-- </style> -->
-  <!--  -->
-  <!-- <script> -->
-  <!-- function toggleContent() { -->
-  <!-- var content = document.getElementById("expandableContent"); -->
-  <!-- var button = document.getElementById("toggleButton"); -->
-  <!-- if (content.style.display === "none") { -->
-  <!-- content.style.display = "block"; -->
-  <!-- button.textContent = "[-]"; -->
-  <!-- } else { -->
-  <!-- content.style.display = "none"; -->
-  <!-- button.textContent = "[+]"; -->
-  <!-- } -->
-  <!-- } -->
-  <!-- </script> -->
-
-  <section class="section">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column is-full">
-          <h2 class="title is-3 has-text-centered">Comparison with Baselines</h2>
-          <p>We benchmark our pre-trained RDT model (RDT (ours)) against baselines including RDT without pre-training
-            (RDT (scratch)), OpenVLA, ACT, and Octo.</p>
-
-          <!-- Placeholder for bar chart -->
-          <img src="./static/images/comparison.png" style="margin: 2%;">
-          <p>Here are some sample comparative videos:</p>
-          <h3 class="title is-4 mt-3 has-text-centered">Dexterity</h3>
+          <h3 class="title is-5 mt-3 has-text-centered">Short-horizon Tasks</h3>
 
           <!-- Row 1 -->
+          <h4 class="title is-6 mt-3 has-text-left">Grasp Handle of Cup</h4>
           <div class="columns is-multiline is-variable is-2">
             <div class="column is-3">
               <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
-                <source src="./static/comparison/1.mp4" type="video/mp4">
+                <source src="./static/videos/cuphandle-trainobj-1.mp4" type="video/mp4">
               </video>
-              <p class="has-text-centered">⚠️ACT<br>(wrong direction)</p>
+              <p class="has-text-centered">Seen object<br>Seen scene</p>
             </div>
             <div class="column is-3">
               <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
-                <source src="./static/comparison/2.mp4" type="video/mp4">
+                <source src="./static/videos/cuphandle-testobj-1.mp4" type="video/mp4">
               </video>
-              <p class="has-text-centered">❌OpenVLA<br>(grab failed)</p>
+              <p class="has-text-centered"><b style="color: red;">Unseen</b> object<br>Seen scene</p>
             </div>
             <div class="column is-3">
               <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
-                <source src="./static/comparison/3.mp4" type="video/mp4">
+                <source src="./static/videos/cuphandle-testobj-2.mp4" type="video/mp4">
               </video>
-              <p class="has-text-centered">⚠️RDT (scratch)<br>(not straight)</p>
+              <p class="has-text-centered"><b style="color: red;">Unseen</b> object<br>Seen scene</p>
             </div>
             <div class="column is-3">
               <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
-                <source src="./static/comparison/4.mp4" type="video/mp4">
+                <source src="./static/videos/cuphandle-testenv-1.mp4" type="video/mp4">
               </video>
-              <p class="has-text-centered">✅RDT (ours)<br>(straight route)</p>
+              <p class="has-text-centered"><b style="color: red;">Unseen</b>object<br><b style="color: red;">Unseen</b> scene</p>
             </div>
           </div>
-          <h3 class="title is-4 has-text-centered">Instruction Following (L, 1/3)</h3>
 
           <!-- Row 2 -->
+          <h4 class="title is-6 mt-3 has-text-left">Grasp Wall of Cup</h4>
           <div class="columns is-multiline is-centered" style="display: flex; justify-content: center;">
             <div class="column is-3">
               <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
-                <source src="./static/comparison/5.mp4" type="video/mp4">
+                <source src="./static/videos/cupwall-trainobj-1.mp4" type="video/mp4">
               </video>
-              <p class="has-text-centered">⚠️OpenVLA<br>(pour failed)</p>
+              <p class="has-text-centered">Seen object<br>Seen scene</p>
             </div>
             <div class="column is-3">
               <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
-                <source src="./static/comparison/octo_l_1_3.mp4" type="video/mp4">
+                <source src="./static/videos/cupwall-testobj-1.mp4" type="video/mp4">
               </video>
-              <p class="has-text-centered">❌Octo<br>(grab failed)</p>
+              <p class="has-text-centered"><b style="color: red;">Unseen</b> object<br>Seen scene</p>
             </div>
             <div class="column is-3">
               <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
-                <source src="./static/comparison/6.mp4" type="video/mp4">
+                <source src="./static/videos/cupwall-testobj-2.mp4" type="video/mp4">
               </video>
-              <p class="has-text-centered">⚠️RDT (scratch)<br>(wrong water level)</p>
+              <p class="has-text-centered"><b style="color: red;">Unseen</b> object<br>Seen scene</p>
             </div>
             <div class="column is-3">
               <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
-                <source src="./static/comparison/7.mp4" type="video/mp4">
+                <source src="./static/videos/cupwall-testenv-1.mp4" type="video/mp4">
               </video>
-              <p class="has-text-centered">✅RDT (ours)<br>(correct water level)</p>
+              <p class="has-text-centered"><b style="color: red;">Unseen</b>object<br><b style="color: red;">Unseen</b> scene</p>
             </div>
           </div>
-          <h3 class="title is-4 has-text-centered">Unseen Scene (unseen room 1)</h3>
 
           <!-- Row 3 -->
-          <div class="columns is-multiline is-variable is-2">
+          <h4 class="title is-6 mt-3 has-text-left">Pick Mouse</h4>
+          <div class="columns is-multiline is-centered" style="display: flex; justify-content: center;">
             <div class="column is-3">
               <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
-                <source src="./static/comparison/8.mp4" type="video/mp4">
+                <source src="./static/videos/mouse-trainobj-1.mp4" type="video/mp4">
               </video>
-              <p class="has-text-centered">❌ACT<br>(grab failed)</p>
+              <p class="has-text-centered">Seen object<br>Seen scene</p>
             </div>
             <div class="column is-3">
               <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
-                <source src="./static/comparison/octo_unseen_room.mp4" type="video/mp4">
+                <source src="./static/videos/mouse-testobj-1.mp4" type="video/mp4">
               </video>
-              <p class="has-text-centered">⚠️Octo<br>(pour failed)</p>
+              <p class="has-text-centered"><b style="color: red;">Unseen</b> object<br>Seen scene</p>
             </div>
             <div class="column is-3">
               <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
-                <source src="./static/comparison/10.mp4" type="video/mp4">
+                <source src="./static/videos/mouse-testobj-2.mp4" type="video/mp4">
               </video>
-              <p class="has-text-centered">❌RDT (scratch)<br>(grab failed)</p>
+              <p class="has-text-centered"><b style="color: red;">Unseen</b> object<br>Seen scene</p>
             </div>
             <div class="column is-3">
               <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
-                <source src="./static/comparison/11.mp4" type="video/mp4">
+                <source src="./static/videos/mouse-testenv-1.mp4" type="video/mp4">
               </video>
-              <p class="has-text-centered">✅RDT (ours)<br>(pour success)</p>
+              <p class="has-text-centered"><b style="color: red;">Unseen</b>object<br><b style="color: red;">Unseen</b> scene</p>
             </div>
           </div>
-          <h3 class="title is-4 has-text-centered">Few-Shot Learning (1-shot)</h3>
+
 
           <!-- Row 4 -->
-          <div class="columns is-multiline is-variable is-2">
+          <h4 class="title is-6 mt-3 has-text-left">Fold Towel</h4>
+          <div class="columns is-multiline is-centered" style="display: flex; justify-content: center;">
             <div class="column is-3">
               <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
-                <source src="./static/comparison/12.mp4" type="video/mp4">
+                <source src="./static/videos/foldtowel-trainobj-1.mp4" type="video/mp4">
               </video>
-              <p class="has-text-centered">❌ACT<br>(grab failed)</p>
+              <p class="has-text-centered">Seen object<br>Seen scene</p>
             </div>
             <div class="column is-3">
               <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
-                <source src="./static/comparison/13.mp4" type="video/mp4">
+                <source src="./static/videos/foldtowel-testobj-1.mp4" type="video/mp4">
               </video>
-              <p class="has-text-centered">❌OpenVLA<br>(grab failed)</p>
+              <p class="has-text-centered"><b style="color: red;">Unseen</b> object<br>Seen scene</p>
             </div>
             <div class="column is-3">
               <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
-                <source src="./static/comparison/14.mp4" type="video/mp4">
+                <source src="./static/videos/foldtowel-testobj-2.mp4" type="video/mp4">
               </video>
-              <p class="has-text-centered">❌RDT (scratch)<br>(fold failed)</p>
+              <p class="has-text-centered"><b style="color: red;">Unseen</b> object<br>Seen scene</p>
             </div>
             <div class="column is-3">
               <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
-                <source src="./static/comparison/15.mp4" type="video/mp4">
+                <source src="./static/videos/foldtowel-testenv-1.mp4" type="video/mp4">
               </video>
-              <p class="has-text-centered">✅RDT (ours)<br>(fold success)</p>
+              <p class="has-text-centered"><b style="color: red;">Unseen</b>object<br><b style="color: red;">Unseen</b> scene</p>
             </div>
           </div>
+
+          <h3 class="title is-5 mt-3 has-text-centered">Long-horizon Tasks</h3>
+
+          <!-- Row 5 -->
+          <h4 class="title is-6 mt-3 has-text-left">Hang Towel</h4>
+          <div class="columns is-multiline is-centered" style="display: flex; justify-content: center;">
+            <div class="column is-3">
+              <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
+                <source src="./static/videos/hangtowel-trainobj-1.mp4" type="video/mp4">
+              </video>
+              <p class="has-text-centered">Seen object<br>Seen scene</p>
+            </div>
+            <div class="column is-3">
+              <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
+                <source src="./static/videos/hangtowel-testobj-1.mp4" type="video/mp4">
+              </video>
+              <p class="has-text-centered"><b style="color: red;">Unseen</b> object<br>Seen scene</p>
+            </div>
+            <div class="column is-3">
+              <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
+                <source src="./static/videos/hangtowel-testobj-2.mp4" type="video/mp4">
+              </video>
+              <p class="has-text-centered"><b style="color: red;">Unseen</b> object<br>Seen scene</p>
+            </div>
+            <div class="column is-3">
+              <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
+                <source src="./static/videos/hangtowel-testenv-1.mp4" type="video/mp4">
+              </video>
+              <p class="has-text-centered"><b style="color: red;">Unseen</b>object<br><b style="color: red;">Unseen</b> scene</p>
+            </div>
+          </div> 
+
+          <!-- Row 6 -->
+          <h4 class="title is-6 mt-3 has-text-left">Hang Cloth</h4>
+          <div class="columns is-multiline is-centered" style="display: flex; justify-content: center;">
+            <div class="column is-3">
+              <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
+                <source src="./static/videos/hangcloth-trainobj-1.mp4" type="video/mp4">
+              </video>
+              <p class="has-text-centered">Seen object<br>Seen scene</p>
+            </div>
+            <div class="column is-3">
+              <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
+                <source src="./static/videos/hangcloth-testobj-1.mp4" type="video/mp4">
+              </video>
+              <p class="has-text-centered"><b style="color: red;">Unseen</b> object<br>Seen scene</p>
+            </div>
+            <div class="column is-3">
+              <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
+                <source src="./static/videos/hangcloth-testobj-2.mp4" type="video/mp4">
+              </video>
+              <p class="has-text-centered"><b style="color: red;">Unseen</b> object<br>Seen scene</p>
+            </div>
+            <div class="column is-3">
+              <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
+                <source src="./static/videos/hangcloth-testenv-1.mp4" type="video/mp4">
+              </video>
+              <p class="has-text-centered"><b style="color: red;">Unseen</b>object<br><b style="color: red;">Unseen</b> scene</p>
+            </div>
+          </div>          
+
 
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column is-full">
-          <h2 class="title is-3 has-text-centered">RDT Repeatability</h2>
-          <p class="content has-text-justified mb-4">
-            We use the following videos to demonstrate the robustness and repeatability of RDT.
-            It can complete various tasks <strong>5-8</strong> times repeatedly without any failure.
-          </p>
-
-          <!-- Row 1 -->
-          <div class="columns is-multiline">
-            <div class="column is-6">
-              <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
-                <source src="./static/repeatibility/1.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="column is-6">
-              <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
-                <source src="./static/repeatibility/2.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
-
-          <!-- Row 2 -->
-          <div class="columns is-multiline">
-            <div class="column is-6">
-              <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
-                <source src="./static/repeatibility/3.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="column is-6">
-              <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
-                <source src="./static/repeatibility/4.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
 
   <section class="section">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column is-full">
-          <h2 class="title is-3 has-text-centered">Ablation Study</h2>
+          <h2 class="title is-3 has-text-centered">Discussions</h2>
+          <!-- comparison -->
+          <h4 class="title is-4 mt-3 has-text-left">Comparison with Baselines</h4>
           <p>
-            We conduct ablation studies on various components of RDT to understand their importance.
-            We consider the variants of:
-            <ol>
-              <li><i>RDT (ours):</i> the original RDT.</li>
-              <li><i>RDT (regress):</i> RDT w/o diffusion modeling. It employs the MSE regression training objective.</li>
-              <li><i>RDT (small):</i> RDT w/o large parameters. It has only 166M parameters.</li>
-              <li><i>RDT (scratch):</i> RDT w/o pre-training. It is trained from scratch during fine-tuning.</li>
-            </ol>
+          We benchmark SKIL against baselines including DP, DP3, RISE and GenDP algorithms. More details can be found in the paper.
           </p>
-          <img src="./static/images/ablation.png" style="margin: 2%;">
-          Results show that all components are crucial for the success of RDT.
+          <img src="./static/images/comparison.png" style="margin: 2%;">
+          Realworld results, measured by evaluation phase success rates on the unseen testing objects. SKIL outperforms baseline methods by a large margin on either training or testing objects.
+
+          <!-- visualization of keypoints -->
+          <h4 class="title is-4 mt-3 has-text-left">Visualization of Semantic Keypoints</h4>
+          <p>
+            For an intuitive glance of SKIL's keypoint-based representation, the following figure illustrates the moving trajectories of the matched semantic keypoints on several tasks. By comparing with the keypoints in the reference images, we observe that most of the matched semantic keypoints in the input images maintain high temporal consistency. Even when some keypoints are occluded, the mismatched points remain close to the correct position.
+          </p>
+          <img src="./static/images/keypoint-movement.png" style="margin: 2%;">
+          Movement of semantic keypoints in SKIL. Green points represent the keypoints in the current frame, and the white trajectories show their movements in previous timesteps. Most keypoints maintain temporal consistency. Although some keypoints are occluded, the mismatched points remain close to the relevant object.
+          <img src="./static/images/keypoint-movement-objects.png" style="margin: 2%;">
+          Movement of semantic keypoints on different objects in SKIL. Green points represent the current keypoints, and the white flows show their previous trajectories. Temporal consistency is maintained across objects within the same category.
+
+          <!-- ablation on vlm -->
+          <h4 class="title is-4 mt-3 has-text-left">Ablation on Vision Foundation Models</h4>
+          <div style="display: flex; justify-content: space-between;">
+            <div style="flex: 1;">
+              <p>
+                We conduct ablation studies on various vision foundation models, including DiFT, DINOv2 and RADIO. More details can be found in the paper.
+              </p>
+              A comparison of success rates and inference latency for different vision foundation models (DINOv2, DiFT, and RADIO v2.5) on an NVIDIA A10 GPU. The results highlight the trade-off between computational overhead (latency) and performance (success rate) across varying model scales.
+            </div>
+            <div style="flex: 1; text-align: right;">
+              <img src="./static/images/vlm_compare.png" style="width: 100%; margin: 2%;">
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -742,11 +464,11 @@
         <h2 class="title">Citation</h2>
         If you find our work helpful, please cite us:
         <div style="position: relative;">
-            <pre><code id="bibtex-code">@article{liu2024rdt,
-    title={RDT-1B: a Diffusion Foundation Model for Bimanual Manipulation},
-    author={Liu, Songming and Wu, Lingxuan and Li, Bangguo and Tan, Hengkai and Chen, Huayu and Wang, Zhengyi and Xu, Ke and Su, Hang and Zhu, Jun},
-    journal={arXiv preprint arXiv:2410.07864},
-    year={2024}
+            <pre><code id="bibtex-code">@article{wang2025skil,
+    title={SKIL: Semantic Keypoint Imitation Learning for Generalizable Data-efficient Manipulation},
+    author={Wang, Shengjie and You, Jiacheng and Hu, Yihang and Li, Jiongye and Gao, Yang},
+    journal={arXiv preprint arXiv:xxx},
+    year={2025}
 }</code></pre>
             <button onclick="copyToClipboard()" style="position: absolute; top: 5px; right: 5px; background: none; border: none; cursor: pointer;">
                 <!-- 粘贴图标，可以使用Font Awesome 图标库 -->
