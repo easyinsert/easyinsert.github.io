@@ -163,8 +163,7 @@
             </div>
           </div>
           <p style="text-align: justify;">
-            Real-world tasks such as garment manipulation and table rearrangement demand robots to perform generalizable, highly precise, and long-horizon actions. Although imitation learning has proven to be an effective approach for teaching robots new skills, large amounts of expert demonstration data are still indispensible for these complex tasks, resulting in high sample complexity and costly data collection. 
-            To address this, we propose <b>Semantic Keypoint Imitation Learning (SKIL)</b>, a framework which automatically obtain <b>semantic keypoints</b> with help of vision foundation models, and forms <b>the descriptor of semantic keypoints</b> that enables effecient imitation learning of complex robotic tasks with significantly lower sample complexity. 
+            We propose <b>Semantic Keypoint Imitation Learning (SKIL)</b>, a framework which automatically obtain <b>semantic keypoints</b> with help of vision foundation models, and forms <b>the descriptor of semantic keypoints</b> that enables effecient imitation learning of complex robotic tasks with significantly lower sample complexity. 
             In real world experiments, SKIL doubles the performance of baseline methods in tasks such as picking a cup or mouse, while demonstrating exceptional robustness to variations in objects, environmental changes, and distractors. For long-horizon tasks like hanging a towel on a rack where previous methods fail completely, SKIL achieves a mean success rate of 70% with as few as 30 demonstrations. 
             Furthermore, SKIL naturally supports <b>cross-embodiment learning</b> due to its semantic keypoints abstraction, our experiments demonstrate that even human videos bring considerable improvement to the learning performance. All these results demonstrate the great success of SKIL in achieving data-efficint generalizable robotic learning.
           </p>
@@ -425,32 +424,24 @@
           <!-- comparison -->
           <h4 class="title is-5 mt-3 has-text-centered">Comparison with Baselines</h4>
           <p>
-          We benchmark SKIL against baselines including DP, DP3, RISE and GenDP algorithms. More details can be found in the paper.
+          We benchmark SKIL against baselines including DP, DP3, RISE and GenDP algorithms. Realworld results are measured by evaluation phase success rates on the unseen testing objects. SKIL outperforms baseline methods by a large margin on either training or testing objects. More details can be found in the paper.
           </p>
           <img src="./static/images/comparison.png" style="margin: 2%;">
-          Realworld results, measured by evaluation phase success rates on the unseen testing objects. SKIL outperforms baseline methods by a large margin on either training or testing objects.
+          
 
           <!-- visualization of keypoints -->
           <h4 class="title is-5 mt-3 has-text-centered">Visualization of Semantic Keypoints</h4>
           <p>
-            For an intuitive glance of SKIL's keypoint-based representation, the following figure illustrates the moving trajectories of the matched semantic keypoints on several tasks. By comparing with the keypoints in the reference images, we observe that most of the matched semantic keypoints in the input images maintain high temporal consistency. Even when some keypoints are occluded, the mismatched points remain close to the correct position.
+            For an intuitive glance of SKIL's keypoint-based representation, the following figure illustrates the moving trajectories of the matched semantic keypoints on several tasks. Green points represent the current keypoints, and the white flows show their previous trajectories. Temporal consistency is maintained across objects within the same category.
           </p>
-          <div style="display: flex; flex-direction: column; gap: 20px;">
-            <div style="display: flex; align-items: center;">
-              <img src="./static/images/keypoint-movement.png" style="margin: 2%; max-width: 50%;">
-              <p style="flex: 1; margin-left: 20px;">
-                Movement of semantic keypoints in SKIL. Green points represent the keypoints in the current frame, and the white trajectories show their movements in previous timesteps. Most keypoints maintain temporal consistency. Although some keypoints are occluded, the mismatched points remain close to the relevant object.
-              </p>
-            </div>
-            
-            <div style="display: flex; align-items: center;">
-              <img src="./static/images/keypoint-movement-objects.png" style="margin: 2%; max-width: 50%;">
-              <p style="flex: 1; margin-left: 20px;">
-                Movement of semantic keypoints on different objects in SKIL. Green points represent the current keypoints, and the white flows show their previous trajectories. Temporal consistency is maintained across objects within the same category.
-              </p>
+          <div class="container is-max-desktop">
+            <div class="hero-body" style="display: flex; justify-content: center; align-items: center;">
+              <video style="width:100%; height:auto; margin: 0%;" controls muted loading="lazy" autoplay loop playsinline>
+                <source src="./static/videos/keypoint-movement-720p.mp4" type="video/mp4">
+              </video>
             </div>
           </div>
-
+          
           <!-- ablation on vlm -->
           <h4 class="title is-5 mt-3 has-text-centered">Ablation on Vision Foundation Models</h4>
           <div style="display: flex; justify-content: space-between;">
