@@ -59,6 +59,8 @@
   <!-- </div> -->
   <!-- </nav> -->
 
+  <!-- 这里应该是作者部分--> 
+
 
   <section class="hero">
     <div class="hero-body">
@@ -71,33 +73,33 @@
                 <div class="column is-10">
                   <div class="is-size-5 publication-authors has-text-centered">
                     <span class="author-block">
-                      <a href="https://shengjiewang-jason.github.io/">Shengjie Wang</a><sup>1,2,3</sup>,
+                      <a href="https://guangheli12.github.io/">Guanghe Li</a><sup>1,2,4,5</sup>,
                     </span>
                     <span class="author-block">
-                      <a href="https://x.com/YouJiacheng">Jiacheng You</a><sup>1,2,3</sup>,
+                      <a href="https://github.com/JunmingZhao20?tab=repositories">Junming Zhao</a><sup>1,3,4,5</sup>,
                     </span>
                     <span class="author-block">
-                      <a href="https://scholar.google.com/citations?user=slFtxbMAAAAJ&hl=en">Yihang Hu</a><sup>1</sup>,
+                      <a href="https://shengjiewang-jason.github.io/">Shengjie Wang</a><sup>1,4,5</sup>,
                     </span>
+                    <!-- <span class="author-block">
+                      <a href="https://github.com/Cata1ysttt">Yang Gao</a><sup>1</sup>,
+                    </span> -->
                     <span class="author-block">
-                      <a href="https://github.com/Cata1ysttt">Jiongye Li</a><sup>1</sup>,
-                    </span>
-                    <span class="author-block">
-                      <a href="https://yang-gao.weebly.com/">Yang Gao</a><sup>1,2,3</sup>
+                      <a href="https://yang-gao.weebly.com/">Yang Gao</a><sup>1,4,5</sup>
                     </span>
                   </div>
                 </div>
               </div>
             </div>
             <div class="is-size-5 publication-authors">
-              <span class="author-block"><sup>1</sup>Tsinghua University, <sup>2</sup>Shanghai AI Laboratory, <sup>3</sup>Shanghai Qi Zhi Institute</span><br>
+              <span class="author-block"><sup>1</sup>Tsinghua University, <sup>2</sup>Jilin University, <sup>3</sup>Fudan University, <sup>4</sup>Shanghai AI Laboratory, <sup>5</sup>Shanghai Qi Zhi Institute</span><br>
             </div>
 
             <div class="column has-text-centered">
               <div class="publication-links">
                 <!-- PDF Link. -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/pdf/2501.14400" class="external-link button is-normal is-rounded is-dark">
+                  <!-- <a href="https://arxiv.org/pdf/2501.14400" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                     </span>
@@ -111,10 +113,10 @@
                     </span>
                     <span>arXiv</span>
                   </a>
-                </span>
+                </span> -->
                 <!-- Code Link. -->
                 <span class="link-block">
-                  <a href="https://github.com/Shengjiewang-Jason" class="external-link button is-normal is-rounded is-dark">
+                  <a href="https://github.com/guangheli12" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
@@ -123,14 +125,14 @@
                 </span>
                 <!-- Dataset Link. -->
                 <!-- Model Link. -->
-                <span class="link-block">
+                <!-- <span class="link-block">
                   <a href="https://x.com/ShengjieWa34067" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon"> 
                       <i class="fa-brands fa-twitter"></i>                            
                     </span>
                     <span>Twitter</span>
                   </a>
-                </span>                                      
+                </span>                                       -->
               </div>
             </div>
           </div>
@@ -139,11 +141,12 @@
     </div>
   </section>
 
+  <!-- 这里应该是主视频部分--> 
   <section class="hero teaser">
     <div class="container is-max-desktop">
       <div class="hero-body" style="display: flex; justify-content: center; align-items: center;">
         <video style="width:100%; height:auto; margin: 0%;" controls muted loading="lazy" autoplay loop playsinline>
-          <source src="./static/videos/SKIL-website.mp4" type="video/mp4">
+          <source src="./static/videos/low_res/easyinsert_5_4_18_03.mp4" type="video/mp4">
         </video>
       </div>
     </div>
@@ -151,7 +154,7 @@
   </section>
 
 
-
+   <!-- 这里应该是 figure1--> 
   <section class="section">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
@@ -159,13 +162,11 @@
           <h2 class="title is-3 has-text-centered">Overview</h2>
           <div style="display: flex; justify-content: center;">
             <div style="display: flex; justify-content: center;">
-              <img src="./static/images/teaser.png" alt="Abstract image" style="max-width: 100%; height: auto; margin: 10px;">
+              <img src="./static/images/Fig1_5_1.pdf" alt="Abstract image" style="max-width: 100%; height: auto; margin: 10px;">
             </div>
           </div>
           <p style="text-align: justify;">
-            We propose <b>Semantic Keypoint Imitation Learning (SKIL)</b>, a framework which automatically obtain <b>semantic keypoints</b> with help of vision foundation models, and forms <b>the descriptor of semantic keypoints</b> that enables effecient imitation learning of complex robotic tasks with significantly lower sample complexity. 
-            In real world experiments, SKIL doubles the performance of baseline methods in tasks such as picking a cup or mouse, while demonstrating exceptional robustness to variations in objects, environmental changes, and distractors. For long-horizon tasks like hanging a towel on a rack where previous methods fail completely, SKIL achieves a mean success rate of 70% with as few as 30 demonstrations. 
-            Furthermore, SKIL naturally supports <b>cross-embodiment learning</b> due to its semantic keypoints abstraction, our experiments demonstrate that even human videos bring considerable improvement to the learning performance. All these results demonstrate the great success of SKIL in achieving data-efficint generalizable robotic learning.
+            We propose <b>EasyInsert</b>, a framework which leverages the human intuition that <b>relative pose (delta pose)</b> between plug and socket is sufficient for successful insertion, and employs efficient and automated real-world data collection with minimal human labor to train a generalizable model for relative pose prediction. During execution, EasyInsert follows a coarse-to-fine execution procedure based on predicted delta pose, and successfully performs various insertion tasks. EasyInsert demonstrates strong zero-shot generalization capability for unseen objects in cluttered environments, handling cases with significant initial pose deviations while maintaining high sample efficiency and requiring little human effort. In real-world experiments, with just 5 hours of training data, EasyInsert achieves over 90% success in zero-shot insertion for 13 out of 15 unseen novel objects, including challenging objects like Type-C cables, HDMI cables, and Ethernet cables. Furthermore, with only one human demonstration and 4 minutes of automatically collected data for fine-tuning, it reaches over 90% success rate for all 15 objects. 
           </p>
         </div>
       </div>
@@ -177,16 +178,16 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column is-full">
-          <h2 class="title is-3 has-text-centered">SKIL Framework</h2>
+          <h2 class="title is-3 has-text-centered">EasyInsert Framework</h2>
 <!--           <h2 class="title is-3 has-text-centered">Framework</h2> -->
 <!--           <h3 class="title is-5 has-text-centered">SKIL Framework</h3> -->
           <div class="has-text-centered">
-            <img src="./static/images/method.png" alt="SKIL Framework" class="image is-fullwidth">
+            <img src="./static/images/method_final_mac.pdf" alt="EasyInsert Framework" class="image is-fullwidth">
           </div>
           <p class="content has-text-justified mt-4">
-            Overview of our framework SKIL, including <b>Semantic Keypoints Description Module</b> and <b>Policy Module</b>. The first module computes descriptors for the semantic keypoints. Then, we apply a transformer encoder to obtain the fused embedding of the keypoints. Conditioned on the fused embedding and robot state, a diffusion action head outputs the final action sequence.
+            Overview of our method: <b>(1) Left: </b>Data collection module: that constructs training dataset with 80% automated and 20% manual data collection, where manual data collection focuses on fine-grained interactions around the socket area and auto-collection scale data in a larger spatial range. <b>(2) Middle:</b> Generalist Policy pretrained from the collected data, predicts relative pose between plug and socket directly from visual inputs. For tasks requiring higher precision, the same data collection module can be reused to perform one-shot finetuning on the target objects. <b>(3) Right:</b> Motivated by human insertion behavior, we design a similar coarse-to-fine execution process for the robot.
           </p>
-          <div class="container">
+          <!-- <div class="container">
             <div class="columns is-centered">
               <div class="column is-6">
                 <p class="content has-text-justified mt-4">
@@ -199,7 +200,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
 <!--           <h3 class="title is-5 has-text-centered">Cross-embodiment Learning</h3> -->
 <!--           <div class="container">
               <div class="columns is-centered">
@@ -223,6 +224,8 @@
     </div>
   </section>
 
+
+  <!-- 这里是 evaluation 的所有视频  -->
   <section class="section">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
@@ -231,183 +234,190 @@
           <p>We use a Franka robot arm equipped with a Robotiq gripper to perform six real-world tasks, including the first four short-horizon tasks and the last two long-horizon ones.
           Our experiments demonstrate the strong generalization ability and the excelling data efficiency of SKIL under <b>diverse unseen objects and scenes</b>.
           </p>
-          <h3 class="title is-4 mt-3 has-text-centered">Short-horizon Tasks</h3>
+          <h3 class="title is-4 mt-3 has-text-centered">Zero-Shot Videos</h3>
 
           <!-- Row 1 -->
-          <h4 class="title is-6 mt-3 has-text-left">Grasp Handle of Cup</h4>
+           <!-- 把这个给注释掉 -->
+          
+          <!-- <h4 class="title is-6 mt-3 has-text-left">Grasp Handle of Cup</h4> -->
           <div class="columns is-multiline is-variable is-2">
             <div class="column is-3">
               <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
-                <source src="./static/videos/cuphandle-trainobj-1.mp4" type="video/mp4">
+                <source src="./static/videos/low_res/01129_regular.mp4" type="video/mp4">
               </video>
-              <p class="has-text-centered">Seen object<br>Seen scene</p>
+              <p class="has-text-centered">AutoMate-01129</p>
             </div>
             <div class="column is-3">
               <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
-                <source src="./static/videos/cuphandle-testobj-1.mp4" type="video/mp4">
+                <source src="./static/videos/low_res/00417_regular.mp4" type="video/mp4">
               </video>
-              <p class="has-text-centered"><b style="color: red;">Unseen</b> object<br>Seen scene</p>
+              <p class="has-text-centered">AutoMate-00417</p>
             </div>
             <div class="column is-3">
               <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
-                <source src="./static/videos/cuphandle-testobj-2.mp4" type="video/mp4">
+                <source src="./static/videos/low_res/00320_regular.mp4" type="video/mp4">
               </video>
-              <p class="has-text-centered"><b style="color: red;">Unseen</b> object<br>Seen scene</p>
+              <p class="has-text-centered">AutoMate-00320</p>
             </div>
             <div class="column is-3">
               <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
-                <source src="./static/videos/cuphandle-testenv-1.mp4" type="video/mp4">
+                <source src="./static/videos/low_res/01041_regular.mp4" type="video/mp4">
               </video>
-              <p class="has-text-centered"><b style="color: red;">Unseen</b>object<br><b style="color: red;">Unseen</b> scene</p>
+              <p class="has-text-centered">AutoMate-01041</p>
             </div>
           </div>
 
           <!-- Row 2 -->
-          <h4 class="title is-6 mt-3 has-text-left">Grasp Wall of Cup</h4>
+          <!-- <h4 class="title is-6 mt-3 has-text-left">Grasp Wall of Cup</h4> -->
           <div class="columns is-multiline is-centered" style="display: flex; justify-content: center;">
             <div class="column is-3">
               <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
-                <source src="./static/videos/cupwall-trainobj-1.mp4" type="video/mp4">
+                <source src="./static/videos/low_res/00681_regular.mp4" type="video/mp4">
               </video>
-              <p class="has-text-centered">Seen object<br>Seen scene</p>
+              <p class="has-text-centered">AutoMate-00681</p>
             </div>
             <div class="column is-3">
               <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
-                <source src="./static/videos/cupwall-testobj-1.mp4" type="video/mp4">
+                <source src="./static/videos/low_res/key_regular.mp4" type="video/mp4">
               </video>
-              <p class="has-text-centered"><b style="color: red;">Unseen</b> object<br>Seen scene</p>
+              <p class="has-text-centered">Key</p>
             </div>
             <div class="column is-3">
               <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
-                <source src="./static/videos/cupwall-testobj-2.mp4" type="video/mp4">
+                <source src="./static/videos/low_res/hdmi_regular.mp4" type="video/mp4">
               </video>
-              <p class="has-text-centered"><b style="color: red;">Unseen</b> object<br>Seen scene</p>
+              <p class="has-text-centered">HDMI</p>
             </div>
             <div class="column is-3">
               <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
-                <source src="./static/videos/cupwall-testenv-1.mp4" type="video/mp4">
+                <source src="./static/videos/low_res/typec_regular.mp4" type="video/mp4">
               </video>
-              <p class="has-text-centered"><b style="color: red;">Unseen</b>object<br><b style="color: red;">Unseen</b> scene</p>
+              <p class="has-text-centered">Type-C</p>
             </div>
           </div>
 
           <!-- Row 3 -->
-          <h4 class="title is-6 mt-3 has-text-left">Pick Mouse</h4>
+          <!-- <h4 class="title is-6 mt-3 has-text-left">Pick Mouse</h4> -->
           <div class="columns is-multiline is-centered" style="display: flex; justify-content: center;">
             <div class="column is-3">
               <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
-                <source src="./static/videos/mouse-trainobj-1.mp4" type="video/mp4">
+                <source src="./static/videos/low_res/ethernet_regular.mp4" type="video/mp4">
               </video>
-              <p class="has-text-centered">Seen object<br>Seen scene</p>
+              <p class="has-text-centered">Ethernet</p>
             </div>
             <div class="column is-3">
               <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
-                <source src="./static/videos/mouse-testobj-1.mp4" type="video/mp4">
+                <source src="./static/videos/low_res/doughnut_regular.mp4" type="video/mp4">
               </video>
-              <p class="has-text-centered"><b style="color: red;">Unseen</b> object<br>Seen scene</p>
+              <p class="has-text-centered">Doughnut</p>
             </div>
             <div class="column is-3">
               <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
-                <source src="./static/videos/mouse-testobj-2.mp4" type="video/mp4">
+                <source src="./static/videos/low_res/trapazoid.mp4" type="video/mp4">
               </video>
-              <p class="has-text-centered"><b style="color: red;">Unseen</b> object<br>Seen scene</p>
+              <p class="has-text-centered">Trapezoid</p>
             </div>
             <div class="column is-3">
               <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
-                <source src="./static/videos/mouse-testenv-1.mp4" type="video/mp4">
+                <source src="./static/videos/low_res/rectangle_regular.mp4" type="video/mp4">
               </video>
-              <p class="has-text-centered"><b style="color: red;">Unseen</b>object<br><b style="color: red;">Unseen</b> scene</p>
+              <p class="has-text-centered">Rectangle</p>
             </div>
           </div>
 
 
           <!-- Row 4 -->
-          <h4 class="title is-6 mt-3 has-text-left">Fold Towel</h4>
+          <!-- <h4 class="title is-6 mt-3 has-text-left">Fold Towel</h4> -->
           <div class="columns is-multiline is-centered" style="display: flex; justify-content: center;">
             <div class="column is-3">
               <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
-                <source src="./static/videos/foldtowel-trainobj-1.mp4" type="video/mp4">
+                <source src="./static/videos/low_res/rectangle_thin.mp4" type="video/mp4">
               </video>
-              <p class="has-text-centered">Seen object<br>Seen scene</p>
+              <p class="has-text-centered">Rectangle-Thin</p>
             </div>
             <div class="column is-3">
               <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
-                <source src="./static/videos/foldtowel-testobj-1.mp4" type="video/mp4">
+                <source src="./static/videos/low_res/stick_regular.mp4" type="video/mp4">
               </video>
-              <p class="has-text-centered"><b style="color: red;">Unseen</b> object<br>Seen scene</p>
+              <p class="has-text-centered">Stick</p>
             </div>
             <div class="column is-3">
               <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
-                <source src="./static/videos/foldtowel-testobj-2.mp4" type="video/mp4">
+                <source src="./static/videos/low_res/round_1_regular.mp4" type="video/mp4">
               </video>
-              <p class="has-text-centered"><b style="color: red;">Unseen</b> object<br>Seen scene</p>
+              <p class="has-text-centered">Round-1</p>
             </div>
             <div class="column is-3">
               <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
-                <source src="./static/videos/foldtowel-testenv-1.mp4" type="video/mp4">
+                <source src="./static/videos/low_res/round_2_regular.mp4" type="video/mp4">
               </video>
-              <p class="has-text-centered"><b style="color: red;">Unseen</b>object<br><b style="color: red;">Unseen</b> scene</p>
+              <p class="has-text-centered">Round-2</p>
             </div>
           </div>
+          
 
-          <h3 class="title is-4 mt-3 has-text-centered">Long-horizon Tasks</h3>
+          <!-- 把人类扰动的视频放到这里 -->
+          <h3 class="title is-4 mt-3 has-text-centered">Zero-Shot(Human Perturbation)</h3>
 
           <!-- Row 5 -->
-          <h4 class="title is-6 mt-3 has-text-left">Hang Towel</h4>
+          <!-- <h4 class="title is-6 mt-3 has-text-left">Hang Towel</h4> -->
           <div class="columns is-multiline is-centered" style="display: flex; justify-content: center;">
             <div class="column is-3">
               <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
-                <source src="./static/videos/hangtowel-trainobj-1.mp4" type="video/mp4">
+                <source src="./static/videos/low_res/typec_pert.mp4" type="video/mp4">
               </video>
-              <p class="has-text-centered">Seen object<br>Seen scene</p>
+              <p class="has-text-centered">Type-C</p>
             </div>
             <div class="column is-3">
               <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
-                <source src="./static/videos/hangtowel-testobj-1.mp4" type="video/mp4">
+                <source src="./static/videos/low_res/rectangle_pert.mp4" type="video/mp4">
               </video>
-              <p class="has-text-centered"><b style="color: red;">Unseen</b> object<br>Seen scene</p>
+              <p class="has-text-centered">Rectangle</p>
             </div>
             <div class="column is-3">
               <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
-                <source src="./static/videos/hangtowel-testobj-2.mp4" type="video/mp4">
+                <source src="./static/videos/low_res/ethernet_pert.mp4" type="video/mp4">
               </video>
-              <p class="has-text-centered"><b style="color: red;">Unseen</b> object<br>Seen scene</p>
+              <p class="has-text-centered">Ethernet</p>
             </div>
             <div class="column is-3">
               <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
-                <source src="./static/videos/hangtowel-testenv-1.mp4" type="video/mp4">
+                <source src="./static/videos/low_res/00681_pert.mp4" type="video/mp4">
               </video>
-              <p class="has-text-centered"><b style="color: red;">Unseen</b>object<br><b style="color: red;">Unseen</b> scene</p>
+              <p class="has-text-centered">AutoMate-00681</p>
             </div>
           </div> 
 
           <!-- Row 6 -->
-          <h4 class="title is-6 mt-3 has-text-left">Hang Cloth</h4>
+           <!-- 这里放大偏差的数据点 -->
+          <h3 class="title is-4 mt-3 has-text-centered">Zero-Shot(Extreme Pose Deviation)</h3>
+          <!-- <h4 class="title is-6 mt-3 has-text-left">Hang Cloth</h4> -->
           <div class="columns is-multiline is-centered" style="display: flex; justify-content: center;">
             <div class="column is-3">
               <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
-                <source src="./static/videos/hangcloth-trainobj-1.mp4" type="video/mp4">
+                <source src="./static/videos/low_res/typec_deviation.mp4" type="video/mp4">
               </video>
-              <p class="has-text-centered">Seen object<br>Seen scene</p>
+              <p class="has-text-centered">Type-C</p>
             </div>
             <div class="column is-3">
               <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
-                <source src="./static/videos/hangcloth-testobj-1.mp4" type="video/mp4">
+                <source src="./static/videos/low_res/rectangle_deviation.mp4" type="video/mp4">
               </video>
-              <p class="has-text-centered"><b style="color: red;">Unseen</b> object<br>Seen scene</p>
+              <p class="has-text-centered">Rectangle</p>
             </div>
             <div class="column is-3">
               <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
-                <source src="./static/videos/hangcloth-testobj-2.mp4" type="video/mp4">
+                <source src="./static/videos/low_res/hdmi_deviation.mp4" type="video/mp4">
               </video>
-              <p class="has-text-centered"><b style="color: red;">Unseen</b> object<br>Seen scene</p>
+              <p class="has-text-centered">HDMI</p>
             </div>
             <div class="column is-3">
               <video style="width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
-                <source src="./static/videos/hangcloth-testenv-1.mp4" type="video/mp4">
+                <source src="./static/videos/low_res/00681_deviation.mp4" type="video/mp4">
               </video>
-              <p class="has-text-centered"><b style="color: red;">Unseen</b>object<br><b style="color: red;">Unseen</b> scene</p>
+              <p class="has-text-centered">AutoMate-00681</p>
             </div>
+
           </div>          
 
 
@@ -423,22 +433,23 @@
         <div class="column is-full">
           <h2 class="title is-3 has-text-centered">Discussions</h2>
           <!-- comparison -->
-          <h4 class="title is-5 mt-3 has-text-centered">Comparison with Baselines</h4>
+          <h4 class="title is-5 mt-3 has-text-centered">Main Results</h4>
           <p>
           We benchmark SKIL against baselines including DP, DP3, RISE and GenDP algorithms. Realworld results are measured by evaluation phase success rates on the unseen testing objects. SKIL outperforms baseline methods by a large margin on either training or testing objects. More details can be found in the paper.
           </p>
           <img src="./static/images/comparison.png" style="margin: 2%;">
           
-
+          
+          <!-- 可以在这里放那个一镜到底的长视频 -->
           <!-- visualization of keypoints -->
-          <h4 class="title is-5 mt-3 has-text-centered">Visualization of Semantic Keypoints</h4>
+          <h4 class="title is-5 mt-3 has-text-centered">A Long Uncut Video</h4>
           <p>
-            For an intuitive glance of SKIL's keypoint-based representation, the following figure illustrates the moving trajectories of the matched semantic keypoints on several tasks. Green points represent the current keypoints, and the white flows show their previous trajectories. Temporal consistency is maintained across objects within the same category.
+            We here present a long uncut video of EasyInsert conseqtively inserting different objects in zero-shot setting under human disturbance. 
           </p>
           <div class="container is-max-desktop">
             <div class="hero-body" style="display: flex; justify-content: center; align-items: center;">
               <video style="width:100%; height:auto; margin: 0%;" controls muted loading="lazy" autoplay loop playsinline>
-                <source src="./static/videos/keypoint-movement-720p.mp4" type="video/mp4">
+                <source src="./static/videos/low_res/one_long_video.mp4" type="video/mp4">
               </video>
             </div>
           </div>
