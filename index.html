@@ -73,26 +73,35 @@
                 <div class="column is-10">
                   <div class="is-size-5 publication-authors has-text-centered">
                     <span class="author-block">
-                      <a href="https://guangheli12.github.io/">Guanghe Li</a><sup>1,2,4,5</sup>,
+                    
+                      <a href="https://guangheli12.github.io/">Guanghe Li</a><sup>1,2,3,4</sup><sup>*</sup>,
                     </span>
                     <span class="author-block">
-                      <a href="https://github.com/JunmingZhao20?tab=repositories">Junming Zhao</a><sup>1,3,4,5</sup>,
+                      <a href="https://github.com/JunmingZhao20?tab=repositories">Junming Zhao</a><sup>1,2,3,5</sup><sup>*</sup>,
                     </span>
                     <span class="author-block">
-                      <a href="https://shengjiewang-jason.github.io/">Shengjie Wang</a><sup>1,4,5</sup>,
+                      <a href="https://shengjiewang-jason.github.io/">Shengjie Wang</a><sup>1,2,3</sup>,
                     </span>
                     <!-- <span class="author-block">
                       <a href="https://github.com/Cata1ysttt">Yang Gao</a><sup>1</sup>,
                     </span> -->
                     <span class="author-block">
-                      <a href="https://yang-gao.weebly.com/">Yang Gao</a><sup>1,4,5</sup>
+                      <a href="https://yang-gao.weebly.com/">Yang Gao</a><sup>1,2,3</sup><sup>†</sup>
                     </span>
                   </div>
+
+
+
+                  <!-- </div> -->
+                  <div class="is-size-5 publication-authors">
+                      * Equal contribution&nbsp;&nbsp;† Corresponding author
+                  </div>
+
                 </div>
               </div>
             </div>
             <div class="is-size-5 publication-authors">
-              <span class="author-block"><sup>1</sup>Tsinghua University, <sup>2</sup>Jilin University, <sup>3</sup>Fudan University, <sup>4</sup>Shanghai AI Laboratory, <sup>5</sup>Shanghai Qi Zhi Institute</span><br>
+              <span class="author-block"><sup>1</sup>Tsinghua University,  <sup>2</sup>Shanghai AI Laboratory, <sup>3</sup>Shanghai Qi Zhi Institute, <sup>4</sup>Jilin University, <sup>5</sup>Fudan University</span><br>
             </div>
 
             <div class="column has-text-centered">
@@ -146,7 +155,8 @@
     <div class="container is-max-desktop">
       <div class="hero-body" style="display: flex; justify-content: center; align-items: center;">
         <video style="width:100%; height:auto; margin: 0%;" controls muted loading="lazy" autoplay loop playsinline>
-          <source src="./static/videos/low_res/easyinsert_5_4_18_03.mp4" type="video/mp4">
+          <!-- <source src="./static/videos/low_res/easyinsert_5_4_18_03.mp4" type="video/mp4"> -->
+          <source src="./static/videos/low_res/easyinsert_full.mp4" type="video/mp4">
         </video>
       </div>
     </div>
@@ -166,7 +176,7 @@
             </div>
           </div>
           <p style="text-align: justify;">
-            We propose <b>EasyInsert</b>, a framework which leverages the human intuition that <b>relative pose (delta pose)</b> between plug and socket is sufficient for successful insertion, and employs efficient and automated real-world data collection with minimal human labor to train a generalizable model for relative pose prediction. During execution, EasyInsert follows a coarse-to-fine execution procedure based on predicted delta pose, and successfully performs various insertion tasks. EasyInsert demonstrates strong zero-shot generalization capability for unseen objects in cluttered environments, handling cases with significant initial pose deviations while maintaining high sample efficiency and requiring little human effort. In real-world experiments, with just 5 hours of training data, EasyInsert achieves over 90% success in zero-shot insertion for 13 out of 15 unseen novel objects, including challenging objects like Type-C cables, HDMI cables, and Ethernet cables. Furthermore, with only one human demonstration and 4 minutes of automatically collected data for fine-tuning, it reaches over 90% success rate for all 15 objects. 
+            We propose <b>EasyInsert</b>, a framework which leverages the human intuition that <b>relative pose (delta pose)</b> between plug and socket is sufficient for successful insertion, and employs efficient and automated real-world data collection with minimal human labor to train a generalizable model for relative pose prediction. During execution, EasyInsert follows a coarse-to-fine execution procedure based on predicted delta pose, and successfully performs various insertion tasks. EasyInsert demonstrates strong zero-shot generalization capability for unseen objects in cluttered environments, handling cases with significant initial pose deviations while maintaining high sample efficiency and requiring little human effort. In real-world experiments, with just 5 hours of training data, EasyInsert achieves over <b>90% success in zero-shot insertion </b>for <b>13 out of 15 </b> unseen novel objects, including challenging objects like Type-C cables, HDMI cables, and Ethernet cables. Furthermore, with only one human demonstration and 4 minutes of automatically collected data for fine-tuning, it reaches over 90% success rate for all 15 objects. 
           </p>
         </div>
       </div>
@@ -231,8 +241,13 @@
       <div class="columns is-centered">
         <div class="column is-full">
           <h2 class="title is-3 has-text-centered">Evaluation Videos</h2>
-          <p>We use a Franka robot arm equipped with a Robotiq gripper to perform six real-world tasks, including the first four short-horizon tasks and the last two long-horizon ones.
+          <!-- <p>We use a Franka robot arm equipped with a Robotiq gripper to perform six real-world tasks, including the first four short-horizon tasks and the last two long-horizon ones.
           Our experiments demonstrate the strong generalization ability and the excelling data efficiency of SKIL under <b>diverse unseen objects and scenes</b>.
+          </p> -->
+
+          <p>
+            We trained EasyInsert on five categories of objects and evaluated it on <b>15 unseen insertion tasks</b>. The robotic system consists of a 7-DoF Franka Emika Panda arm, using dual wrist-mounted Intel Realsense 405 RGB cameras for visual perception. 
+            Experimental results demonstrate that EasyInsert exhibits strong generalization capabilities across diverse objects, spatial configurations, and environmental conditions, while maintaining high resistance to perturbations.
           </p>
           <h3 class="title is-4 mt-3 has-text-centered">Zero-Shot Videos</h3>
 
@@ -435,16 +450,31 @@
           <!-- comparison -->
           <h4 class="title is-5 mt-3 has-text-centered">Main Results</h4>
           <p>
-          We benchmark SKIL against baselines including DP, DP3, RISE and GenDP algorithms. Realworld results are measured by evaluation phase success rates on the unseen testing objects. SKIL outperforms baseline methods by a large margin on either training or testing objects. More details can be found in the paper.
+            Trained on only 5 hours of data, EasyInsert exhibited strong zero-shot generalization across all 15 unseen objects. As shown below, the method achieved success rates of 90% on most tasks, with only two cases showing lower performance of 80%. Remarkably, tested in a much more cluttered environment and with much greater initial pose deviation, EasyInsert's zero-shot success rate outperforms AutoMate's in-domain results, highlighting its strong generalization capability.
           </p>
-          <img src="./static/images/comparison.png" style="margin: 2%;">
+          <!-- <img src="./static/images/comparison.png" style="margin: 2%;"> -->
+          <!-- <img src="./static/images/net_pdf.pdf" style="margin: 2%;"> -->
+
+          <!-- <div class="has-text-centered">
+            <embed src="./static/images/net_pdf.pdf" type="application/pdf" width="80%" height="600px" style="max-width: 100%;">
+          </div> -->
           
+          <!-- This is a pretty good layout, just needs to be bigger! -->
+          <!-- <div class="has-text-centered">
+            <img src="./static/images/net_pdf.pdf" style="width: auto; max-width: 100%; max-height: 800px; display: block; margin: 0 auto;">
+          </div> -->
+
+
+          <div class="has-text-centered">
+            <img src="./static/images/net_pdf.pdf" style="width: 100%; max-width: 1200px; max-height: none; display: block; margin: 0 auto;">
+          </div>
+     
           
           <!-- 可以在这里放那个一镜到底的长视频 -->
           <!-- visualization of keypoints -->
           <h4 class="title is-5 mt-3 has-text-centered">A Long Uncut Video</h4>
           <p>
-            We here present a long uncut video of EasyInsert conseqtively inserting different objects in zero-shot setting under human disturbance. 
+            Here, we present an unedited video in which EasyInsert successfully performs consecutive object insertions in a zero-shot setting under human perturbation. This demonstrates EasyInsert's strong generalization capability and robustness against external disturbances. 
           </p>
           <div class="container is-max-desktop">
             <div class="hero-body" style="display: flex; justify-content: center; align-items: center;">
@@ -455,14 +485,16 @@
           </div>
           
           <!-- ablation on vlm -->
-          <h4 class="title is-5 mt-3 has-text-centered">Ablation on Vision Foundation Models</h4>
+          <!-- <h4 class="title is-5 mt-3 has-text-centered">Ablation on Vision Foundation Models</h4>
           <div style="display: flex; justify-content: space-between;">
             <div style="display: flex; align-items: center;">
                 <img src="./static/images/vlm_compare.png" style="margin: 2%; max-width: 50%;">
                 <p>We conduct ablation studies on various vision foundation models, including DiFT, DINOv2, and RADIO. More details can be found in the paper.
                 A comparison of success rates and inference latency for different vision foundation models (DINOv2, DiFT, and RADIO v2.5) on an NVIDIA A10 GPU.</p>
             </div>
-          </div>
+          </div> -->
+
+
         </div>
       </div>
     </div>
@@ -473,12 +505,14 @@
         <h2 class="title">Citation</h2>
         If you find our work helpful, please cite us:
         <div style="position: relative;">
-            <pre><code id="bibtex-code">@article{wang2025skil,
+            <pre><code id="bibtex-code">
+              <!-- @article{wang2025skil,
     title={SKIL: Semantic Keypoint Imitation Learning for Generalizable Data-efficient Manipulation},
     author={Wang, Shengjie and You, Jiacheng and Hu, Yihang and Li, Jiongye and Gao, Yang},
     journal={arXiv preprint arXiv:2501.14400},
     year={2025}
-}</code></pre>
+} -->
+  </code></pre>
             <button onclick="copyToClipboard()" style="position: absolute; top: 5px; right: 5px; background: none; border: none; cursor: pointer;">
                 <!-- 粘贴图标，可以使用Font Awesome 图标库 -->
                 <i class="fa fa-paste" aria-hidden="true"></i>
