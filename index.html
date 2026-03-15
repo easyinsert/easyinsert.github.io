@@ -178,7 +178,7 @@
             </div>
           </div>
           <p style="text-align: justify;">
-            We propose <b>EasyInsert</b>, a framework which leverages the human intuition that <b>relative pose (delta pose)</b> between plug and socket is sufficient for successful insertion, and employs efficient and automated real-world data collection with minimal human labor to train a generalizable model for relative pose prediction. During execution, EasyInsert follows a coarse-to-fine execution procedure based on predicted delta pose, and successfully performs various insertion tasks. EasyInsert demonstrates strong zero-shot generalization capability for unseen objects in cluttered environments, handling cases with significant initial pose deviations while maintaining high sample efficiency and requiring little human effort. In real-world experiments, with just 5 hours of training data, EasyInsert achieves over <b>90% success in zero-shot insertion </b>for <b>13 out of 15 </b> unseen novel objects, including challenging objects like Type-C cables, HDMI cables, and Ethernet cables. Furthermore, with only one human demonstration and 4 minutes of automatically collected data for fine-tuning, it reaches over 90% success rate for all 15 objects. 
+            EasyInsert is a highly efficient and generalizable robotic insertion framework. By leveraging just one hour of human teleoperation data to bootstrap a large-scale automated data collection process across five categories of insertion pairs, EasyInsert demonstrates strong zero-shot generalization to diverse, unseen objects. It remains robust even in densely cluttered environments and under significant initial pose offsets. 
           </p>
         </div>
       </div>
@@ -198,7 +198,7 @@
             <img src="./static/images/method_final_mac.jpg" alt="EasyInsert Framework" class="image is-fullwidth">
           </div>
           <p class="content has-text-justified mt-4">
-            Overview of our method: <b>(1) Left: </b>Data collection module: that constructs training dataset with 80% automated and 20% manual data collection, where manual data collection focuses on fine-grained interactions around the socket area and auto-collection scale data in a larger spatial range. <b>(2) Middle:</b> Generalist Policy pretrained from the collected data, predicts relative pose between plug and socket directly from visual inputs. For tasks requiring higher precision, the same data collection module can be reused to perform one-shot finetuning on the target objects. <b>(3) Right:</b> Motivated by human insertion behavior, we design a similar coarse-to-fine execution process for the robot.
+            Overview of our method: (1) Left: Data collection module scaling data via 80\% automated spatial exploration and 20\% manual fine-grained interaction. (2) Middle: Generalist policy predicting relative pose directly from vision , supporting fast adaptation for novel test objects when requiring high precision. (3) Right: Coarse-to-fine execution motivated by human insertion behavior.
           </p>
           <!-- <div class="container">
             <div class="columns is-centered">
@@ -449,12 +449,12 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column is-full">
-          <h2 class="title is-3 has-text-centered">Discussions</h2>
+          <!-- <h2 class="title is-3 has-text-centered">Discussions</h2> -->
           <!-- comparison -->
-          <h4 class="title is-5 mt-3 has-text-centered">Main Results</h4>
-          <p>
-            Trained on only 5 hours of data, EasyInsert exhibited strong zero-shot generalization across all 15 unseen objects. As shown below, the method achieved success rates of 90% on most tasks, with only two cases showing lower performance of 80%. Remarkably, tested in a much more cluttered environment and with much greater initial pose deviation, EasyInsert's zero-shot success rate outperforms AutoMate's in-domain results, highlighting its strong generalization capability.
-          </p>
+          <!-- <h4 class="title is-5 mt-3 has-text-centered">Main Results</h4> -->
+          <!-- <p> -->
+            <!-- Trained on only 5 hours of data, EasyInsert exhibited strong zero-shot generalization across all 15 unseen objects. As shown below, the method achieved success rates of 90% on most tasks, with only two cases showing lower performance of 80%. Remarkably, tested in a much more cluttered environment and with much greater initial pose deviation, EasyInsert's zero-shot success rate outperforms AutoMate's in-domain results, highlighting its strong generalization capability. -->
+          <!-- </p> -->
           <!-- <img src="./static/images/comparison.png" style="margin: 2%;"> -->
           <!-- <img src="./static/images/net_pdf.pdf" style="margin: 2%;"> -->
 
@@ -472,9 +472,9 @@
             <img src="./static/images/net_pdf.pdf" style="width: 100%; max-width: 1200px; max-height: none; display: block; margin: 0 auto;">
           </div> -->
           
-          <div class="has-text-centered">
-            <img src="./static/images/net_pdf_2.jpg" style="width: 100%; max-width: 1200px; max-height: none; display: block; margin: 0 auto;">
-          </div>
+          <!-- <div class="has-text-centered"> -->
+            <!-- <img src="./static/images/net_pdf_2.jpg" style="width: 100%; max-width: 1200px; max-height: none; display: block; margin: 0 auto;"> -->
+          <!-- </div> -->
 
           
           <!-- 可以在这里放那个一镜到底的长视频 -->
